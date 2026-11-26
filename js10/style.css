@@ -1,0 +1,131 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f9;
+  color: #111827;
+  padding: 16px;
+}
+
+.game-wrapper {
+  width: 100%;
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  background-color: #ffffff;
+  padding: 24px 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.player-name {
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-weight: 700;
+  text-align: center;
+  word-break: break-word;
+}
+
+.attempt-info {
+  font-size: clamp(1rem, 2.8vw, 1.35rem);
+  font-style: italic;
+  text-align: center;
+}
+
+.spin-btn {
+  width: min(100%, 260px);
+  padding: 14px 24px;
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  font-weight: 700;
+  color: #000000;
+  background-color: #00ff00;
+  border: 2px solid #00b300;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.spin-btn:hover {
+  background-color: #00e600;
+  transform: translateY(-1px);
+}
+
+.spin-btn:active {
+  transform: scale(0.98);
+}
+
+.slot-board {
+  width: 100%;
+  max-width: 390px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding: 10px;
+  background: linear-gradient(90deg, #4b5563 0%, #9ca3af 50%, #4b5563 100%);
+  border: 3px solid #1e3a8a;
+  border-radius: 8px;
+}
+
+.slot-column {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.slot-cell {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #7c8bc4;
+  border: 2px solid #7f1d1d;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.slot-cell img {
+  width: 78%;
+  height: 78%;
+  object-fit: contain;
+  display: block;
+}
+
+.slot-cell.win-cell {
+  border-color: #facc15;
+  box-shadow: inset 0 0 0 3px #facc15;
+  transform: scale(1.03);
+}
+
+.status-message {
+  min-height: 1.5em;
+  font-size: clamp(1rem, 2.8vw, 1.25rem);
+  font-weight: 700;
+  text-align: center;
+}
+
+@media (max-width: 420px) {
+  .game-wrapper {
+    padding: 18px 12px;
+    gap: 12px;
+  }
+
+  .slot-board {
+    gap: 6px;
+    padding: 8px;
+  }
+
+  .slot-column {
+    gap: 6px;
+  }
+}

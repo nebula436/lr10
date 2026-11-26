@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>лр 10</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game-wrapper">
+    <h1 id="player-name" class="player-name">User</h1>
+    <p id="attempt-info" class="attempt-info">Спроба 0 з 3</p>
+
+    <button id="spin-btn" class="spin-btn" type="button">Generate</button>
+
+    <section id="slot-board" class="slot-board" aria-label="Ігрове поле">
+      <div class="slot-column"></div>
+      <div class="slot-column"></div>
+      <div class="slot-column"></div>
+    </section>
+
+    <p id="status-message" class="status-message" aria-live="polite"></p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
